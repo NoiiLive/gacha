@@ -17,13 +17,13 @@ function IndexTab.Create(playerGui, mainGui)
 	local backgroundFrame = Instance.new("Frame")
 	backgroundFrame.Name = "BackgroundFrame"
 	backgroundFrame.Size = UDim2.new(1, 0, 1, 0)
-	backgroundFrame.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
+	backgroundFrame.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
 	backgroundFrame.Parent = screenGui
 
 	local topBar = Instance.new("Frame")
 	topBar.Name = "TopBar"
 	topBar.Size = UDim2.new(1, 0, 0, 50)
-	topBar.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+	topBar.BackgroundColor3 = Color3.new(0.05, 0.05, 0.05)
 	topBar.Parent = backgroundFrame
 
 	local backButton = Instance.new("TextButton")
@@ -41,42 +41,43 @@ function IndexTab.Create(playerGui, mainGui)
 	contentFrame.BackgroundTransparency = 1
 	contentFrame.Parent = backgroundFrame
 
-	local rosterList = Instance.new("ScrollingFrame")
-	rosterList.Name = "RosterList"
-	rosterList.Size = UDim2.new(0.3, 0, 1, 0)
-	rosterList.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
-	rosterList.CanvasSize = UDim2.new(0, 0, 0, 0)
-	rosterList.Parent = contentFrame
+	local infoArea = Instance.new("Frame")
+	infoArea.Name = "InfoArea"
+	infoArea.Size = UDim2.new(0.67, 0, 1, 0)
+	infoArea.BackgroundColor3 = Color3.new(0.12, 0.12, 0.12)
+	infoArea.Parent = contentFrame
 
-	local listLayout = Instance.new("UIListLayout")
-	listLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	listLayout.Parent = rosterList
-
-	local viewArea = Instance.new("Frame")
-	viewArea.Name = "ViewArea"
-	viewArea.Size = UDim2.new(0.7, 0, 1, 0)
-	viewArea.Position = UDim2.new(0.3, 0, 0, 0)
-	viewArea.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
-	viewArea.Parent = contentFrame
+	local starVisualLabel = Instance.new("TextLabel")
+	starVisualLabel.Name = "StarVisualLabel"
+	starVisualLabel.Size = UDim2.new(1, -40, 0, 30)
+	starVisualLabel.Position = UDim2.new(0, 20, 0, 10)
+	starVisualLabel.Text = ""
+	starVisualLabel.TextSize = 30
+	starVisualLabel.TextColor3 = Color3.new(1, 0.8, 0)
+	starVisualLabel.TextXAlignment = Enum.TextXAlignment.Left
+	starVisualLabel.TextYAlignment = Enum.TextYAlignment.Center
+	starVisualLabel.BackgroundTransparency = 1
+	starVisualLabel.Parent = infoArea
 
 	local nameLabel = Instance.new("TextLabel")
 	nameLabel.Name = "NameLabel"
-	nameLabel.Size = UDim2.new(1, -20, 0, 50)
-	nameLabel.Position = UDim2.new(0, 10, 0, 10)
-	nameLabel.Text = "Select a Unit"
-	nameLabel.TextSize = 30
+	nameLabel.Size = UDim2.new(1, -40, 0, 40)
+	nameLabel.Position = UDim2.new(0, 20, 0, 40)
+	nameLabel.Text = "Select a unit to view details."
+	nameLabel.TextSize = 35
 	nameLabel.TextColor3 = Color3.new(1, 1, 1)
-	nameLabel.TextWrapped = true
+	nameLabel.TextXAlignment = Enum.TextXAlignment.Left
+	nameLabel.TextYAlignment = Enum.TextYAlignment.Top
 	nameLabel.BackgroundTransparency = 1
-	nameLabel.Parent = viewArea
+	nameLabel.Parent = infoArea
 
 	local infoContainer = Instance.new("Frame")
 	infoContainer.Name = "InfoContainer"
-	infoContainer.Size = UDim2.new(1, -20, 1, -150)
-	infoContainer.Position = UDim2.new(0, 10, 0, 70)
+	infoContainer.Size = UDim2.new(1, -40, 1, -170)
+	infoContainer.Position = UDim2.new(0, 20, 0, 90)
 	infoContainer.BackgroundTransparency = 1
 	infoContainer.Visible = false
-	infoContainer.Parent = viewArea
+	infoContainer.Parent = infoArea
 
 	local infoLabel = Instance.new("TextLabel")
 	infoLabel.Name = "InfoLabel"
@@ -92,7 +93,7 @@ function IndexTab.Create(playerGui, mainGui)
 	infoLabel.Parent = infoContainer
 
 	local infoConstraint = Instance.new("UITextSizeConstraint")
-	infoConstraint.MaxTextSize = 20
+	infoConstraint.MaxTextSize = 25
 	infoConstraint.Parent = infoLabel
 
 	local statsLabel = Instance.new("TextLabel")
@@ -109,16 +110,16 @@ function IndexTab.Create(playerGui, mainGui)
 	statsLabel.Parent = infoContainer
 
 	local statsConstraint = Instance.new("UITextSizeConstraint")
-	statsConstraint.MaxTextSize = 20
+	statsConstraint.MaxTextSize = 25
 	statsConstraint.Parent = statsLabel
 
 	local starsPanel = Instance.new("Frame")
 	starsPanel.Name = "StarsPanel"
-	starsPanel.Size = UDim2.new(1, -20, 1, -150)
-	starsPanel.Position = UDim2.new(0, 10, 0, 70)
+	starsPanel.Size = UDim2.new(1, -40, 1, -170)
+	starsPanel.Position = UDim2.new(0, 20, 0, 90)
 	starsPanel.BackgroundTransparency = 1
 	starsPanel.Visible = false
-	starsPanel.Parent = viewArea
+	starsPanel.Parent = infoArea
 
 	local starsInfoLabel = Instance.new("TextLabel")
 	starsInfoLabel.Name = "StarsInfoLabel"
@@ -134,27 +135,103 @@ function IndexTab.Create(playerGui, mainGui)
 	starsInfoLabel.Parent = starsPanel
 
 	local starsConstraint = Instance.new("UITextSizeConstraint")
-	starsConstraint.MaxTextSize = 25
+	starsConstraint.MaxTextSize = 30
 	starsConstraint.Parent = starsInfoLabel
 
 	local starUpButton = Instance.new("TextButton")
 	starUpButton.Name = "StarUpButton"
-	starUpButton.Size = UDim2.new(0, 200, 0, 50)
+	starUpButton.Size = UDim2.new(0, 250, 0, 60)
 	starUpButton.Position = UDim2.new(0, 0, 0.5, 0)
 	starUpButton.Text = "Star Up"
+	starUpButton.TextSize = 25
 	starUpButton.BackgroundColor3 = Color3.new(0.2, 0.8, 0.2)
 	starUpButton.TextColor3 = Color3.new(1, 1, 1)
 	starUpButton.Parent = starsPanel
 
 	local gradeUpButton = Instance.new("TextButton")
 	gradeUpButton.Name = "GradeUpButton"
-	gradeUpButton.Size = UDim2.new(0, 200, 0, 50)
+	gradeUpButton.Size = UDim2.new(0, 250, 0, 60)
 	gradeUpButton.Position = UDim2.new(0, 0, 0.5, 0)
 	gradeUpButton.Text = "Grade Up"
+	gradeUpButton.TextSize = 25
 	gradeUpButton.BackgroundColor3 = Color3.new(0.6, 0.2, 0.8)
 	gradeUpButton.TextColor3 = Color3.new(1, 1, 1)
 	gradeUpButton.Visible = false
 	gradeUpButton.Parent = starsPanel
+
+	local tabArea = Instance.new("Frame")
+	tabArea.Name = "TabArea"
+	tabArea.Size = UDim2.new(1, 0, 0, 60)
+	tabArea.Position = UDim2.new(0, 0, 1, -60)
+	tabArea.BackgroundColor3 = Color3.new(0.08, 0.08, 0.08)
+	tabArea.Parent = infoArea
+
+	local tabLayout = Instance.new("UIListLayout")
+	tabLayout.FillDirection = Enum.FillDirection.Horizontal
+	tabLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	tabLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+	tabLayout.Padding = UDim.new(0, 20)
+	tabLayout.Parent = tabArea
+
+	local statsBtn = Instance.new("TextButton")
+	statsBtn.Name = "StatsBtn"
+	statsBtn.Size = UDim2.new(0, 150, 0, 40)
+	statsBtn.Text = "Stats"
+	statsBtn.TextSize = 20
+	statsBtn.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+	statsBtn.TextColor3 = Color3.new(1, 1, 1)
+	statsBtn.Parent = tabArea
+
+	local starUpTabBtn = Instance.new("TextButton")
+	starUpTabBtn.Name = "StarUpTabBtn"
+	starUpTabBtn.Size = UDim2.new(0, 150, 0, 40)
+	starUpTabBtn.Text = "Star Up"
+	starUpTabBtn.TextSize = 20
+	starUpTabBtn.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+	starUpTabBtn.TextColor3 = Color3.new(1, 1, 1)
+	starUpTabBtn.Parent = tabArea
+
+	local rosterList = Instance.new("ScrollingFrame")
+	rosterList.Name = "RosterList"
+	rosterList.Size = UDim2.new(0.33, 0, 1, 0)
+	rosterList.Position = UDim2.new(0.67, 0, 0, 0)
+	rosterList.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
+	rosterList.CanvasSize = UDim2.new(0, 0, 0, 0)
+	rosterList.Parent = contentFrame
+
+	local gridLayout = Instance.new("UIGridLayout")
+	gridLayout.CellSize = UDim2.new(0, 160, 0, 220)
+	gridLayout.CellPadding = UDim2.new(0, 20, 0, 20)
+	gridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	gridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	gridLayout.Parent = rosterList
+
+	local padding = Instance.new("UIPadding")
+	padding.PaddingTop = UDim.new(0, 20)
+	padding.PaddingBottom = UDim.new(0, 20)
+	padding.Parent = rosterList
+
+	gridLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+		rosterList.CanvasSize = UDim2.new(0, 0, 0, gridLayout.AbsoluteContentSize.Y + 40)
+	end)
+
+	statsBtn.MouseButton1Click:Connect(function()
+		if currentSelectedUnitUUID then
+			infoContainer.Visible = true
+			starsPanel.Visible = false
+			statsBtn.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+			starUpTabBtn.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+		end
+	end)
+
+	starUpTabBtn.MouseButton1Click:Connect(function()
+		if currentSelectedUnitUUID then
+			infoContainer.Visible = false
+			starsPanel.Visible = true
+			starUpTabBtn.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+			statsBtn.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+		end
+	end)
 
 	starUpButton.MouseButton1Click:Connect(function()
 		if currentSelectedUnitUUID then
@@ -173,48 +250,6 @@ function IndexTab.Create(playerGui, mainGui)
 			end
 		end
 	end)
-
-	local menuFrame = Instance.new("Frame")
-	menuFrame.Name = "MenuFrame"
-	menuFrame.Size = UDim2.new(1, -20, 0, 60)
-	menuFrame.Position = UDim2.new(0, 10, 1, -70)
-	menuFrame.BackgroundTransparency = 1
-	menuFrame.Parent = viewArea
-
-	local menuLayout = Instance.new("UIListLayout")
-	menuLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	menuLayout.FillDirection = Enum.FillDirection.Horizontal
-	menuLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	menuLayout.VerticalAlignment = Enum.VerticalAlignment.Center
-	menuLayout.Padding = UDim.new(0.02, 0)
-	menuLayout.Parent = menuFrame
-
-	local subMenus = {"Info", "Levels", "Stars", "Charms", "Bonds"}
-	for i, menuName in ipairs(subMenus) do
-		local btn = Instance.new("TextButton")
-		btn.Name = menuName .. "Button"
-		btn.LayoutOrder = i
-		btn.Size = UDim2.new(0.18, 0, 1, 0)
-		btn.Text = menuName
-		btn.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
-		btn.TextColor3 = Color3.new(1, 1, 1)
-		btn.Parent = menuFrame
-
-		btn.MouseButton1Click:Connect(function()
-			if not currentSelectedUnitUUID then return end
-
-			if menuName == "Info" then
-				infoContainer.Visible = true
-				starsPanel.Visible = false
-			elseif menuName == "Stars" then
-				infoContainer.Visible = false
-				starsPanel.Visible = true
-			else
-				infoContainer.Visible = false
-				starsPanel.Visible = false
-			end
-		end)
-	end
 
 	backButton.MouseButton1Click:Connect(function()
 		screenGui.Enabled = false
@@ -236,21 +271,32 @@ function IndexTab.Refresh(gui, resetSelection)
 	if not contentFrame then return end
 
 	local rosterList = contentFrame:FindFirstChild("RosterList")
-	local viewArea = contentFrame:FindFirstChild("ViewArea")
+	local infoArea = contentFrame:FindFirstChild("InfoArea")
 
-	if not rosterList or not viewArea then return end
+	if not rosterList or not infoArea then return end
 
 	if resetSelection then
 		currentSelectedUnitUUID = nil
 
-		local nameLabel = viewArea:FindFirstChild("NameLabel")
-		if nameLabel then nameLabel.Text = "Select a Unit" end
+		local nameLabel = infoArea:FindFirstChild("NameLabel")
+		if nameLabel then nameLabel.Text = "Select a unit to view details." end
 
-		local infoContainer = viewArea:FindFirstChild("InfoContainer")
+		local starVisualLabel = infoArea:FindFirstChild("StarVisualLabel")
+		if starVisualLabel then starVisualLabel.Text = "" end
+
+		local infoContainer = infoArea:FindFirstChild("InfoContainer")
 		if infoContainer then infoContainer.Visible = false end
 
-		local starsPanel = viewArea:FindFirstChild("StarsPanel")
+		local starsPanel = infoArea:FindFirstChild("StarsPanel")
 		if starsPanel then starsPanel.Visible = false end
+
+		local tabArea = infoArea:FindFirstChild("TabArea")
+		if tabArea then
+			local statsBtn = tabArea:FindFirstChild("StatsBtn")
+			local starUpTabBtn = tabArea:FindFirstChild("StarUpTabBtn")
+			if statsBtn then statsBtn.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3) end
+			if starUpTabBtn then starUpTabBtn.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2) end
+		end
 	end
 
 	for _, child in ipairs(rosterList:GetChildren()) do
@@ -259,63 +305,156 @@ function IndexTab.Refresh(gui, resetSelection)
 		end
 	end
 
+	local unitModelsFolder = ReplicatedStorage:FindFirstChild("UnitModels")
+
 	if activeData and activeData.Units then
-		local yOffset = 0
 		local indexOrder = 1
+		local focusOffset = Vector3.new(0, 1.0, 0)
+		local camOffset = Vector3.new(0, 1.2, -3.0)
+
 		for _, unitInstance in ipairs(activeData.Units) do
 			local baseData = UnitDatabase.GetUnitData(unitInstance.UnitID)
 			if baseData then
 				local unitBtn = Instance.new("TextButton")
-				unitBtn.Name = unitInstance.UnitID .. "_Btn"
+				unitBtn.Name = unitInstance.UUID
 				unitBtn.LayoutOrder = indexOrder
-				unitBtn.Size = UDim2.new(1, 0, 0, 50)
-				unitBtn.Text = "[" .. baseData.Title .. "] " .. baseData.Name .. " (Lv." .. unitInstance.Level .. ")"
-				unitBtn.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+				unitBtn.BackgroundColor3 = Color3.new(0.2, 0.2, 0.25)
+				unitBtn.Text = ""
+				unitBtn.Parent = rosterList
 
 				if currentSelectedUnitUUID == unitInstance.UUID then
-					unitBtn.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
-					IndexTab.DisplayUnit(viewArea, unitInstance, baseData, activeData)
+					unitBtn.BackgroundColor3 = Color3.new(0.5, 0.5, 0.2)
+					IndexTab.DisplayUnit(infoArea, unitInstance, baseData, activeData)
 				end
 
-				unitBtn.TextColor3 = Color3.new(1, 1, 1)
-				unitBtn.Parent = rosterList
+				local viewport = Instance.new("ViewportFrame")
+				viewport.Name = "Viewport"
+				viewport.Size = UDim2.new(1, 0, 0.75, 0)
+				viewport.Position = UDim2.new(0, 0, 0, 0)
+				viewport.BackgroundTransparency = 1
+				viewport.Parent = unitBtn
+
+				local camera = Instance.new("Camera")
+				viewport.CurrentCamera = camera
+				camera.Parent = viewport
+
+				local modelToUse
+				if unitModelsFolder and unitModelsFolder:FindFirstChild(unitInstance.UnitID) then
+					modelToUse = unitModelsFolder:FindFirstChild(unitInstance.UnitID):Clone()
+				else
+					modelToUse = Instance.new("Part")
+					modelToUse.Size = Vector3.new(4, 5, 4)
+					modelToUse.BrickColor = BrickColor.new("Bright blue")
+				end
+
+				modelToUse.Parent = viewport
+
+				if modelToUse:IsA("Model") and modelToUse.PrimaryPart then
+					modelToUse:PivotTo(CFrame.new(0, 0, 0))
+					local lookAt = modelToUse.PrimaryPart.Position + focusOffset
+					camera.CFrame = CFrame.lookAt(modelToUse.PrimaryPart.Position + camOffset, lookAt)
+				elseif modelToUse:IsA("Model") then
+					modelToUse:MoveTo(Vector3.new(0,0,0))
+					camera.CFrame = CFrame.lookAt(Vector3.new(0,0,0) + camOffset, Vector3.new(0,0,0) + focusOffset)
+				else
+					modelToUse.CFrame = CFrame.new(0, 0, 0)
+					camera.CFrame = CFrame.lookAt(Vector3.new(0,0,0) + camOffset, Vector3.new(0,0,0) + focusOffset)
+				end
+
+				local infoLabel = Instance.new("TextLabel")
+				infoLabel.Name = "InfoLabel"
+				infoLabel.Size = UDim2.new(1, 0, 0.25, 0)
+				infoLabel.Position = UDim2.new(0, 0, 0.75, 0)
+				infoLabel.BackgroundColor3 = Color3.new(0.1, 0.1, 0.15)
+				infoLabel.Text = baseData.Name .. "\nLv. " .. unitInstance.Level
+				infoLabel.TextColor3 = Color3.new(1, 1, 1)
+				infoLabel.TextScaled = true
+				infoLabel.Parent = unitBtn
+
+				local currentGradeDisplay = unitInstance.Grade
+				if currentGradeDisplay == "Base" then currentGradeDisplay = "D" end
+
+				local listStarLabel = Instance.new("TextLabel")
+				listStarLabel.Name = "ListStarLabel"
+				listStarLabel.Size = UDim2.new(1, -10, 0, 20)
+				listStarLabel.Position = UDim2.new(0, 5, 0, 5)
+				listStarLabel.BackgroundTransparency = 1
+				listStarLabel.TextScaled = true
+				listStarLabel.TextXAlignment = Enum.TextXAlignment.Left
+				listStarLabel.Parent = unitBtn
+
+				if unitInstance.Stars >= 6 and (baseData.BaseRarity == "SSR" or baseData.BaseRarity == "SP") then
+					listStarLabel.Text = "Grade: " .. currentGradeDisplay
+					listStarLabel.TextColor3 = Color3.new(0.8, 0.4, 1)
+				else
+					local starStr = ""
+					for i = 1, unitInstance.Stars do
+						starStr = starStr .. "★"
+					end
+					for i = unitInstance.Stars + 1, 6 do
+						starStr = starStr .. "☆"
+					end
+					listStarLabel.Text = starStr
+					listStarLabel.TextColor3 = Color3.new(1, 0.8, 0)
+				end
+
+				local listStarConstraint = Instance.new("UITextSizeConstraint")
+				listStarConstraint.MaxTextSize = 18
+				listStarConstraint.Parent = listStarLabel
 
 				unitBtn.MouseButton1Click:Connect(function()
 					for _, sibling in ipairs(rosterList:GetChildren()) do
 						if sibling:IsA("TextButton") then
-							sibling.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+							sibling.BackgroundColor3 = Color3.new(0.2, 0.2, 0.25)
 						end
 					end
-					unitBtn.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
-					IndexTab.DisplayUnit(viewArea, unitInstance, baseData, activeData)
+					unitBtn.BackgroundColor3 = Color3.new(0.5, 0.5, 0.2)
 
-					local infoContainer = viewArea:FindFirstChild("InfoContainer")
-					local starsPanel = viewArea:FindFirstChild("StarsPanel")
+					IndexTab.DisplayUnit(infoArea, unitInstance, baseData, activeData)
+
+					local infoContainer = infoArea:FindFirstChild("InfoContainer")
+					local starsPanel = infoArea:FindFirstChild("StarsPanel")
 					if infoContainer and starsPanel and not infoContainer.Visible and not starsPanel.Visible then
 						infoContainer.Visible = true
 					end
 				end)
 
-				yOffset = yOffset + 50
 				indexOrder = indexOrder + 1
 			end
 		end
-		rosterList.CanvasSize = UDim2.new(0, 0, 0, yOffset)
 	end
 end
 
-function IndexTab.DisplayUnit(viewArea, unitInstance, baseData, activeData)
+function IndexTab.DisplayUnit(infoArea, unitInstance, baseData, activeData)
 	currentSelectedUnitUUID = unitInstance.UUID
 
-	local nameLabel = viewArea:FindFirstChild("NameLabel")
-	local infoContainer = viewArea:FindFirstChild("InfoContainer")
-	local starsPanel = viewArea:FindFirstChild("StarsPanel")
+	local nameLabel = infoArea:FindFirstChild("NameLabel")
+	local starVisualLabel = infoArea:FindFirstChild("StarVisualLabel")
+	local infoContainer = infoArea:FindFirstChild("InfoContainer")
+	local starsPanel = infoArea:FindFirstChild("StarsPanel")
 
 	local currentGradeDisplay = unitInstance.Grade
 	if currentGradeDisplay == "Base" then currentGradeDisplay = "D" end
 
 	if nameLabel then
 		nameLabel.Text = "[" .. baseData.Title .. "] " .. baseData.Name
+	end
+
+	if starVisualLabel then
+		if unitInstance.Stars >= 6 and (baseData.BaseRarity == "SSR" or baseData.BaseRarity == "SP") then
+			starVisualLabel.Text = "Grade: " .. currentGradeDisplay
+			starVisualLabel.TextColor3 = Color3.new(0.8, 0.4, 1)
+		else
+			local starStr = ""
+			for i = 1, unitInstance.Stars do
+				starStr = starStr .. "★"
+			end
+			for i = unitInstance.Stars + 1, 6 do
+				starStr = starStr .. "☆"
+			end
+			starVisualLabel.Text = starStr
+			starVisualLabel.TextColor3 = Color3.new(1, 0.8, 0)
+		end
 	end
 
 	if infoContainer then
