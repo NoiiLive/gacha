@@ -1,0 +1,107 @@
+General Idea
+
+The main game idea is focused around players collecting characters via a gacha system, and forming teams, utilizing them in various combat encounters. 
+
+The game uses turn-based combat, selecting ability cards from a deck, and playing them against their enemies. Characters will fall into multiple roles, such as Support, or DPS, describing how they play out in battle. It features an element based rock-paper-scissors system, where certain characters are stronger or weaker to other characters. 
+
+There will be rotating character banners in a gacha section, dropping new characters frequently to keep the selections fresh, there's also many options to host events with holiday related characters. There is also a monthly 'Carnival' which hosts a much stronger character than the usual banners, which also hosts multiple player versus player events, and lots of rewards.
+
+The game is a mix between menu and physical, so it requires things like models for all units, as well as physical scenes for backgrounds of some areas or combat encounters.
+
+Unit Mechanics
+Rarities
+Units will be split up into rarities, displaying their strength. There are two different categories of the rarities, one is base card rarities, and the other is level up rarities. A card will always be its base rarity until it hits the level requirement to up its rarity.
+Base Rarities: R > SR > SSR (Majority) > SP (Minimal, Very Strong)
+Level Rarities: R > SR (30) > SSR (65) > UR (85) > LR (150) > MR (350)
+Levels
+All units can be levelled to a max of 300. Only units with a base SSR/SP can breakthrough to 350 (Stopping at 300 until then)
+Factions
+All units will be split into four factions, which players will be able to focus resources into to gain buffs for units of that faction. Factions have a gear towards a specific playstyle, but the characters aren't limited to that. (A support focused faction will still have units that can tank, or are primarily DPS)
+-An ‘Orderly’ faction: Has more balance in its units, contains units that are part of an organization or military
+-A ‘Friendly’ faction: Has more tank related units, contains units that have a friendly or familial demeanor to them
+-A ‘Hostile’ faction: Has more damage related units, contains units focused around strength and power
+-An ‘Outcast’ faction: Has more support/utility related units, contains units that don't belong in the other factions
+Elements
+These determine strength/weakness in a rock-paper-scissors format. Element isn't entirely deterministic on the skill set. (A support unit can still be a Strength element, or a DPS unit being Speed)
+There are 3 elements for basic units
+- Strength > Skill
+- Skill > Speed
+- Speed > Strength
+As well as 2 extra elements for the special carnival units
+- Psyche > Wit
+- Wit > Psyche
+Classes
+The classifications that all units will fall under, displaying the type of unit it is
+- Balance (Units focused around balance and performing variety of actions)
+- DPS (Units focused around raw damage)
+- Burst (Units focused around setting up high bursts of damage)
+- Control (Units focused around controlling enemy units)
+- Support (Units focused around buffing or supporting other units)
+Stars / Grades
+All characters can be leveled up using copies, up to 6 stars. SSR forward units can also be graded up using copies, up to SSS grade, providing lots of stat bonuses, and sometimes special effects. Units unlock more passives with their stars, as well as bonus stats. (0 star has 1 passive, and they unlock 2 more passives at 1 star, and 3 star.)
+Stats
+Units will have a plethora of stats, the main 3 which add together into a single stat, Attack Power (AP) to display the overall power of your unit. These stats can be influenced via many external systems, and not strictly through level.
+- ATK: Flat Number (Attack Damage)
+- DEF: Flat Number (Attack Defense)
+- HP: Flat Number (Total Health)
+- CRIT Rate: Percentage (The chance to hit critically)
+- CRIT DMG: Percentage (The amount of extra damage a crit does)
+- CRIT Resist: Percentage (Decreases the chance to be critically hit)
+- CRIT DEF: Percentage (Decreases the damage a crit does)
+- Block Chance: Percentage (The chance to block an attack outright)
+- PEN Rate: Percentage (The amount that damage penetrates defense)
+- Lifesteal: Percentage (The amount of health healed from an attack)
+Charms
+All units will have 3 charm slots, one for their attack charm, defense charm, and health charm. These provide direct bonuses to the uni. These charms can be enhanced, gaining special effects on top of that, and also starred up, up to 5 stars, using other enhanced charms. They also use a tier system (N, R, SR, SSR, UR), and have a rating system 0-100 (85+ = UR). There will also be exclusive LR cells for certain characters, which can only be starred up by copies of itself.
+Equipment
+All units have an exclusive equipment item, tied directly to them. Once obtained, it has 3 rarity tiers (SR, SSR, UR), as well as equipment tiers, up to 20 (tiered up using copies of the equipment). The equipment can also be levelled up, up to 200, providing bonus stats.
+Bonds
+All units have a menu for their bonds, with 3 other units. You must obtain the other units before you can level up their bonds for that unit. (One-way system, you only level up the bond for that specific unit, as well as the other unit doesn't need to have them in their own bonds) Once all 3 bonds are obtained, you can unlock an Ultimate Bond, for bonus stats.
+Potentials
+An unlockable system, with 9 slots. You can slot in potential cores, providing special effects when active. Potentials can be ATK, DEF, or HP type, and provide stats for those specifically, the types can also connect when placed in a row, providing a higher bonus. They have 6 levels, and also have a chance to be a rainbow potential, providing a bonus to all 3 stats, and connecting any type together.
+Tactics
+An endgame system, tactics can be slotted into any character, with 3 tactic slots. Tactics use a tier system (SR, SSR, UR, LR) and provide unique combat effects, as well as bonus stats. LR tactics are very hard to obtain, and provide the most effects.
+
+Combat Mechanics
+
+Team Formation
+At the beginning of a battle, players can assemble their team of characters. (This gets saved between battles). You have 4 main slots, and 1 backup slot: The 4 main slots go on-field first, and the backup slot comes out when a main slot dies. Each unit also comes with an assist slot, which provides bonus stats, and sometimes even a bonus assist skill for some units.
+Cards
+Once in a battle, the player will be presented with a deck of cards, up to 12 cards (3 cards per active team member). Cards have 3 tiers, which increase the damage dealt by the unit per tier. Some units have combat effects, which only trigger on a tier 2 card hit and up. If two same-tier and same-unit cards are next to each other, they will combine into the tier up. There are also energy cards mixed in with the unit cards, which can be played to gain energy.
+Turns
+The game is played in a turn-based fashion. The turn order is determined by the stronger team goes first. A player can play up to 4 cards (1 card slot for each active team member), and then the turn will play out. The stronger team will play their 4 moves, and then the weaker team will follow. (Some PvE battles may contain more than 4 attacks in their turn). You can also target specific enemy units to attack for single-target attackers.
+Ultimates
+There will be 4 ultimates, assigned to each faction, however they are usable by all factions. Ultimate skills will provide unlockable buffs, usually tied to their faction. Ultimate skills can be played in turn when you reach maximum energy in a battle, taking up a turn slot. 
+Weaken
+When a unit of an opposing type attacks the element they are strong against, they will apply 1 weak stack onto them. When the stack hits 3, the unit will become Stunned, and unable to attack for a turn, then the weak stack needed to stun will be increased by 1.
+
+Shield
+Units may have skills or passives that give them shields on turn, which need to be broken to do damage to that unit.
+Block / Dodge
+In combat, units have a chance to block an attack or dodge the attack, avoiding the damage outright
+Provoke
+Some units may have a provoke skill, which means that unit will always be targeted by any attacks, no matter who you are targeting.
+Skill Trigger
+Some units may have passive skills that will trigger when certain conditions are met, allowing them to get extra damage in. Ex. a unit may have a passive that triggers an attack at the start or end of a full turn.
+
+Gacha Mechanics
+Units
+There will be a large variety of units in the game. Units are named using their name, and have a secondary [Title] to distinguish them. Units can be variants of existing units, hence the title distinction. (ex. there could be a [Christmas] variant for a holiday, or there can be different variants for different forms of the same character, allowing them to have different movesets and such.)
+Standard Banner
+There will be a standard banner, utilizing Summon Tickets, which is always active. This banner contains a plethora of 'basic' SSR, SR, and R units. The SSR units in this banner are nothing special, and generally fall-off in the midgame. Players will be provided with tickets for this banner often.
+Event Banner
+This is the cycling banner, which uses Event Summon Tickets. There will be a new event banner running frequently (Every week, or every 2 weeks) and can sometimes overlap with limited banners. These banners are used to drop new higher tier SSR units to the game. The pool for this banner contains all previous event banner units.
+Limited Banner
+These are rare banners which use Event Summon Tickets. This banner is used for holiday or limited event SSR characters, which will never return in future banners. These can overlap with the Event Banners, and has the same character pool as the event banners. 
+Carnival Banner
+This banner is part of a separate monthly event, and will not be in the same recruitment area as the other banners. It uses special Carnival Tickets. This banner is used to drop strong SSR Carnival units, of the Psyche/Wit type. Occasionally this banner will also contain a very strong SP carnival unit. Carnival banners can switch their target draw, and have a draw pool of a variety of items, as well as standard banner units. A carnival unit can be swapped to a month after its banner ends (So there will be a month cooldown after, where the next carnival comes, but the previous unit will not be drawable)
+
+Gameplay Mechanics
+
+Campaign
+This is the starting mode, and the primary mode until it's completed, generally in the late-game.
+Campaign features 6 battles per stage, and will go up to 1000 stages. The battles contain preset NPCs, with set levels and stats, increasing with the stages, and getting harder the further you go. The players will unlock other mechanics of the game via campaign mode, acting as a power gate. (Ex, max team and assist slots being locked off until you clear the first few campaign floors)
+Recruitment
+One of the first mechanics the player interacts with after the first campaign, this is where players use the gacha mechanic to draw for units, expanding their roster.
+Index
+This is where players access their roster of characters, containing a large list, and a viewing area for the selected character. Once clicked on a character, it'll change the list to a viewing menu of their characters stats, and buttons to access their other menus such as levels, stars, charms, or bonds. 
