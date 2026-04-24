@@ -1,4 +1,5 @@
 -- @ScriptType: ModuleScript
+-- ReplicatedStorage/GameConstants.lua
 local GameConstants = {}
 
 GameConstants.Rarities = {
@@ -16,6 +17,14 @@ GameConstants.Factions = {
 GameConstants.Elements = {
 	Basic = {"Strength", "Skill", "Speed"},
 	Special = {"Psyche", "Wit"}
+}
+
+GameConstants.ElementAdvantages = {
+	Strength = "Skill",
+	Skill = "Speed",
+	Speed = "Strength",
+	Psyche = "Wit",
+	Wit = "Psyche"
 }
 
 GameConstants.Classes = {
