@@ -18,8 +18,8 @@ function MainTab.Create(playerGui)
 
 	local container = Instance.new("Frame")
 	container.Size = UDim2.new(0, 250, 0, 400)
-	container.Position = UDim2.new(0.5, 0, 0.5, 0)
-	container.AnchorPoint = Vector2.new(0.5, 0.5)
+	container.Position = UDim2.new(0.05, 0, 0.5, 0)
+	container.AnchorPoint = Vector2.new(0, 0.5)
 	container.BackgroundTransparency = 1
 	container.Parent = mainFrame
 
@@ -27,29 +27,41 @@ function MainTab.Create(playerGui)
 	listLayout.Padding = UDim.new(0, 20)
 	listLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	listLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+	listLayout.SortOrder = Enum.SortOrder.LayoutOrder
 	listLayout.Parent = container
 
 	local campaignButton = Instance.new("TextButton")
 	campaignButton.Name = "CampaignButton"
 	campaignButton.Size = UDim2.new(1, 0, 0, 50)
+	campaignButton.LayoutOrder = 1
 	campaignButton.Text = "Campaign"
 	campaignButton.Parent = container
+
+	local teamButton = Instance.new("TextButton")
+	teamButton.Name = "TeamButton"
+	teamButton.Size = UDim2.new(1, 0, 0, 50)
+	teamButton.LayoutOrder = 2
+	teamButton.Text = "Team Formation"
+	teamButton.Parent = container
 
 	local recruitmentButton = Instance.new("TextButton")
 	recruitmentButton.Name = "RecruitmentButton"
 	recruitmentButton.Size = UDim2.new(1, 0, 0, 50)
+	recruitmentButton.LayoutOrder = 3
 	recruitmentButton.Text = "Recruitment"
 	recruitmentButton.Parent = container
 
 	local indexButton = Instance.new("TextButton")
 	indexButton.Name = "IndexButton"
 	indexButton.Size = UDim2.new(1, 0, 0, 50)
+	indexButton.LayoutOrder = 4
 	indexButton.Text = "Index"
 	indexButton.Parent = container
 
 	local testUnitButton = Instance.new("TextButton")
 	testUnitButton.Name = "TestUnitButton"
 	testUnitButton.Size = UDim2.new(1, 0, 0, 50)
+	testUnitButton.LayoutOrder = 5
 	testUnitButton.Text = "DEV: Give All Test Units"
 	testUnitButton.BackgroundColor3 = Color3.new(0.8, 0.2, 0.2)
 	testUnitButton.TextColor3 = Color3.new(1, 1, 1)
