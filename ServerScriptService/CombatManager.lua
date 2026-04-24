@@ -124,7 +124,7 @@ function CombatManager.StartBattle(player, playerTeamIds, enemies, sceneName)
 		end
 	end
 
-	local unitModelsFolder = ServerStorage:FindFirstChild("UnitModels")
+	local unitModelsFolder = ReplicatedStorage:FindFirstChild("UnitModels")
 
 	local function spawnUnit(unitData, spawns, index, prefix, fallbackColor, lookVector)
 		local spawnPos = spawns[index] or (arenaOffset + Vector3.new(-15 + (index * 6), 3, lookVector.Z * -10))
